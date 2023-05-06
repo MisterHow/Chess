@@ -16,10 +16,12 @@ namespace Chess.Classes
             //Initialise the board with the starting positions of the pieces
             //...
             Initialise();
+            Display(pieces);
         }
 
         private void Initialise()
         {
+            pieces = new IPiece[8, 8];
             // Initialize black pieces on the bottom row/s
             for (int col = 0; col < 8; col++)
             {
@@ -103,7 +105,7 @@ namespace Chess.Classes
             }
             else
             {
-                //The move is invalid, throw an erowception
+                //The move is invalid, throw an exception
                 //...
             }
         }
@@ -127,21 +129,48 @@ namespace Chess.Classes
         }
         public bool IsInCheck(Colour color)
         {
-            // Check if the specified color is currentlcol in check
+            // Check if the specified color is currently in check
             // ...
             return false;
         }
         public bool IsInCheckmate(Colour color)
         {
-            // Check if the specified color is currentlcol in checkmate
+            // Check if the specified color is currently in checkmate
             // ...
             return false;
         }
         public bool IsInStalemate(Colour color)
         {
-            // Check if the specified color is currentlcol in stalemate
+            // Check if the specified color is currently in stalemate
             // ...
             return false;
         }
+        public static void Display(IPiece[,] pieces)
+        {
+            Console.WriteLine("  A B C D E F G H");
+            Console.WriteLine("  ----------------");
+            for (int row = 0; row < 8; row++)
+            {
+                Console.Write((8 - row) + "|");
+                for (int col = 0; col < 8; col++)
+                {
+                    IPiece piece = pieces[row, col];
+                    if (piece == null)
+                    {
+                        Console.Write(" |");
+                    }
+                    else
+                    {
+                        Console.Write(piece.GetType().Name.Substring(0, 1));
+                        Console.Write(piece.Colour == Colour.White ? "W" : "B");
+                        Console.Write("|");
+                    }
+                }
+                Console.WriteLine(" " + (8 - row));
+                Console.WriteLine("  ----------------");
+            }
+            Console.WriteLine("  A B C D E F G H");
+        }
+
     }
 }

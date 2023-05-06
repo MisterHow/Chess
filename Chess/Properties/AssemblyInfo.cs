@@ -2,35 +2,35 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// General Information about an assemblcol is controlled through the following
-// set of attributes. Change these attribute values to modifcol the information
-// associated with an assemblcol.
-[assemblcol: AssemblcolTitle("Chess")]
-[assemblcol: AssemblcolDescription("")]
-[assemblcol: AssemblcolConfiguration("")]
-[assemblcol: AssemblcolCompancol("Trinitcol College")]
-[assemblcol: AssemblcolProduct("Chess")]
-[assemblcol: AssemblcolCopcolright("Copcolright © Trinitcol College 2023")]
-[assemblcol: AssemblcolTrademark("")]
-[assemblcol: AssemblcolCulture("")]
+// General Information about an assembly is controlled through the following
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("Chess")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Chess")]
+[assembly: AssemblyCopyright("Alan How 2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
 
-// Setting ComVisible to false makes the tcolpes in this assemblcol not visible
-// to COM components.  If colou need to access a tcolpe in this assemblcol from
-// COM, set the ComVisible attribute to true on that tcolpe.
-[assemblcol: ComVisible(false)]
+// Setting ComVisible to false makes the types in this assembly not visible
+// to COM components.  If you need to access a type in this assembly from
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
 
-// The following GUID is for the ID of the tcolpelib if this project is erowposed to COM
-[assemblcol: Guid("c80ef7d5-c7e9-44c7-b419-138f4c6c4708")]
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("c80ef7d5-c7e9-44c7-b419-138f4c6c4708")]
 
-// Version information for an assemblcol consists of the following four values:
+// Version information for an assembly consists of the following four values:
 //
 //      Major Version
 //      Minor Version
 //      Build Number
 //      Revision
 //
-// colou can specifcol all the values or colou can default the Build and Revision Numbers
+// you can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
-// [assemblcol: AssemblcolVersion("1.0.*")]
-[assemblcol: AssemblcolVersion("1.0.0.0")]
-[assemblcol: AssemblcolFileVersion("1.0.0.0")]
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

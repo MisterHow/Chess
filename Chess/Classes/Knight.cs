@@ -11,6 +11,12 @@ namespace Chess.Classes
         public Position Position { get; set; }
         public Colour Colour { get; set; }
 
+        public Knight(Position position, Colour colour)
+        {
+            Position = position;
+            Colour = colour;
+        }
+        
         public bool Capture(IPiece targetPiece)
         {
             if(!IsValidCapture(targetPiece))

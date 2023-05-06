@@ -15,6 +15,74 @@ namespace Chess.Classes
         {
             //Initialise the board with the starting positions of the pieces
             //...
+            Initialise();
+        }
+
+        private void Initialise()
+        {
+            // Initialize black pieces on the bottom row/s
+            for (int col = 0; col < 8; col++)
+            {
+                switch (col)
+                {
+                    case 0:
+                    case 7:
+                        pieces[0, col] = new Rook(new Position(0, col), Colour.Black);
+                        break;
+                    case 1:
+                    case 6:
+                        pieces[0, col] = new Knight(new Position(0, col), Colour.Black);
+                        break;
+                    case 2:
+                    case 5:
+                        pieces[0, col] = new Bishop(new Position(0, col), Colour.Black);
+                        break;
+                    case 3:
+                        pieces[0, col] = new Queen(new Position(0, col), Colour.Black);
+                        break;
+                    case 4:
+                        pieces[0, col] = new King(new Position(0, col), Colour.Black);
+                        break;
+                }
+                pieces[1, col] = new Pawn(new Position(1, col), Colour.Black);
+            }
+
+            // Initialize empty squares in the middle of the board
+            for (int row = 2; row < 6; row++)
+            {
+                for (int col = 0; col < 8; col++)
+                {
+                    pieces[row, col] = null;
+                }
+            }
+
+            // Initialize white pieces on the top row/s
+            for (int col = 0; col < 8; col++)
+            {
+                switch (col)
+                {
+                    case 0:
+                    case 7:
+                        pieces[7, col] = new Rook(new Position(7, col), Colour.White);
+                        break;
+                    case 1:
+                    case 6:
+                        pieces[7, col] = new Knight(new Position(7, col), Colour.White);
+                        break;
+                    case 2:
+                    case 5:
+                        pieces[7, col] = new Bishop(new Position(7, col), Colour.White);
+                        break;
+                    case 3:
+                        pieces[7, col] = new Queen(new Position(7, col), Colour.White);
+                        break;
+                    case 4:
+                        pieces[7, col] = new King(new Position(7, col), Colour.White);
+                        break;
+                }
+                pieces[6, col] = new Pawn(new Position(6, col), Colour.White);
+            }
+
         }
 
         public IPiece GetPieceAtPosition(Position position)

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Chess.Classes
 {
-    internal class Bishop : IPiece
+    class Queen : IPiece
     {
         public Position Position { get; set; }
         public Colour Colour { get; set; }
 
-        public Bishop(Position position, Colour colour)
+        public Queen(Position position, Colour colour)
         {
             Position = position;
             Colour = colour;
@@ -34,23 +34,23 @@ namespace Chess.Classes
             int deltaRow = targetPosition.Row - Position.Row;
             int deltaCol = targetPosition.Col - Position.Col;
 
-            int rowDirection = Math.Sign(deltaRow);
-            int colDirection = Math.Sign(deltaCol);
+            // Check if there are any pieces between the starting and ending positions
+            int stepRow = Math.Sign(deltaRow);
+            int stepCol = Math.Sign(deltaCol);
+            int row = Position.Row + stepRow;
+            int col = Position.Col + stepCol;
 
-            int currentRow = Position.Row + rowDirection;
-            int currentCol = Position.Col + colDirection;
-
-            while (currentRow != targetPosition.Row)
+            while (row != targetPosition.Row || col != targetPosition.Col)
             {
-                if (pieces[currentRow, currentCol] != null)
+                if (pieces[row, col] != null)
                 {
                     return false;
                 }
-
-                currentRow += rowDirection;
-                currentCol += colDirection;
+                row += stepRow;
+                col += stepCol;
             }
 
+            // Move the queen to the destination position
             Position = targetPosition;
             return true;
         }
@@ -60,7 +60,7 @@ namespace Chess.Classes
             int rowDistance = Math.Abs(targetPosition.Row - Position.Row);
             int colDistance = Math.Abs(targetPosition.Col - Position.Col);
 
-            return rowDistance == colDistance;
+            return rowDistance == colDistance || (Position.Row == targetPosition.Row ^ Position.Col == targetPosition.Col); ;
         }
 
         public bool IsValidCapture(IPiece targetPiece)

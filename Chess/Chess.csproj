@@ -50,6 +50,7 @@
     <Compile Include="Classes\Knight.cs" />
     <Compile Include="Classes\Pawn.cs" />
     <Compile Include="Classes\Interfaces\IPiece.cs" />
+    <Compile Include="Classes\Queen.cs" />
     <Compile Include="Classes\Rook.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
